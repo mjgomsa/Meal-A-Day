@@ -1,0 +1,40 @@
+/*
+This css file is here to add functionality and style elements that
+were needed. You do not need to edit this file or use it in any way.
+ */
+.logo {
+    background: url(images/LS-logo.png) no-repeat center center;
+    background-size: cover;
+    width: 200px;
+    /* padding: 10%; */
+    
+  }
+
+  #home_banner{
+    background: url(images/home-banner.png) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+  }
+
+  #about_banner{
+    background: url(images/about-banner.png) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+  }
+
+  #logo_font{
+    font-family: 'Libre Baskerville', serif;
+  }
+ 
+ 
+  .justify-center .column{
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.is-family-secondary{
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 6em !important;
+    color:#DCD326 !important;
+    /* font-weight: lighter !important; */
+}
