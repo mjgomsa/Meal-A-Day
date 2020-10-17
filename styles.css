@@ -2,10 +2,11 @@
 This css file is here to add functionality and style elements that
 were needed. You do not need to edit this file or use it in any way.
  */
-.logo {
+ .logo {
     background: url(images/LS-logo.png) no-repeat center center;
     background-size: cover;
     width: 200px;
+    
     /* padding: 10%; */
     
   }
@@ -24,6 +25,7 @@ were needed. You do not need to edit this file or use it in any way.
 
   #logo_font{
     font-family: 'Libre Baskerville', serif;
+    font-size: 75px;
   }
  
  
