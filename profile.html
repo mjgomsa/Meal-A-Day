@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3e0c7ee1b1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="node_modules/hover.css/css/hover.css">
+
+    <link rel="icon" href="images/favicon.png">
+    <title>UpBeat: Quiz</title>
+</head>
+
+<body>
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item logo" href="./index.html"></a>
+            <div class="navbar-burger" data-target="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+            <div class="navbar-start">
+                <a href="./index.html" class="navbar-item brackets">Home</a>
+                <a href="./index.html" class="navbar-item brackets">About</a>
+                <a href="./quiz.html" class="navbar-item brackets">Take Quiz</a>
+                <a href="./profil.html" class="navbar-item brackets">My Profile</a>
+            </div>
+        </div>
+        <div class="navbar-end"></div>
+    </nav>
+    <div class="banner has-background-black-ter	">
+        <h1 class="is-family-secondary m-5 has-text-centered">My Profile</h1>
+
+        <!-- profile body -->
+        <div class="section">
+            <div class="container ">
+
+
+                <div class="columns">
+
+                    <!-- profile -->
+                    <div class="column is-one-quarter m-1">
+                        <div class="card m-2">
+                            <div class="profile-pic p-2"></div>
+                            <div class="card-content">
+                                <p class="title is-4">Name</p>
+                                <p class="subtitle is-6">User Name</p>
+                            </div>
+                            <div class="content p-4">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.</p>
+                                <button class="button yellow_button">Edit Profile</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- playlists -->
+                    <div class="column m-1">
+                        <button class="button yellow_button mb-3">Edit Playlist</button>
+                        <div>
+                            <iframe class="margin-auto"
+                                src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300"
+                                height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                    </div>
+                    <div class="column m-1">
+                        <button class="button yellow_button mb-3">Edit Playlist</button>
+                        <div>
+                            <iframe class="margin-auto"
+                                src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300"
+                                height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
