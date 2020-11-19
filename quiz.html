@@ -1,77 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css" />
-    <link rel="stylesheet" href="styles.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700;900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/3e0c7ee1b1.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="images/favicon.png">
-    <title>UpBeat: Quiz</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="node_modules/bulma/css/bulma.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700;900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/3e0c7ee1b1.js" crossorigin="anonymous"></script>
+  <link rel="icon" href="images/favicon.png">
+  <title>UpBeat: Quiz</title>
 </head>
+
 <body>
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item logo"  href="./index.html"></a>
-          <div class="navbar-burger" data-target="navMenu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-        <div class="navbar-menu" id="navMenu">
-          <div class="navbar-start">
-            <a href="./index.html" class="navbar-item brackets">Home</a>
-            <a href="./index.html" class="navbar-item brackets">About</a>
-            <a href="./quiz.html" class="navbar-item brackets">Take Quiz</a>
-            <a class="navbar-item brackets">My Profile</a>
-          </div>
-        </div>
-        <div class="navbar-end">
-    
-          </div>
-      </nav>
+  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item logo" href="./index.html"></a>
+      <div class="navbar-burger" data-target="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+      <div class="navbar-start">
+        <a href="./index.html" class="navbar-item brackets">Home</a>
+        <a href="./index.html" class="navbar-item brackets">About</a>
+        <a href="./quiz.html" class="navbar-item brackets">Take Quiz</a>
+        <a class="navbar-item brackets">My Profile</a>
+      </div>
+    </div>
+    <div class="navbar-end">
 
-      <!-- Quiz Container -->
-      <div class= "quiz_banner banner">
-        <div id="quiz">
-            <h1 class="title" id="quiz-name">Let's guess your mood</h1>
-            <div id="quiz_cont">
-                <div class="question">
-                    <h2 class="subtitle">Question #1 Goes Here</h2>
-                </div>
+    </div>
+  </nav>
 
-                    <div id="ans">1</div>
-                    <div id="ans">2</div>
-                    <div id="ans">3</div>
-                    <div id="ans">4</div>
-                
-            </div>
-            
-            <button class="yellow_button" id="submit-button">Submit Answers</button>
-            <button class="yellow_button" id="next-question-button">Next Question</button>
-            <button class="yellow_button" id="prev-question-button">Previous Question</button>
-            
+  <!-- Quiz Container -->
+  <div class="quiz_banner banner">
+    <div id="quiz">
+      <h1 class="title has-text-white-ter" id="quiz-name">Let's guess your mood</h1>
+      <div id="quiz_cont">
+        <div class="question">
+          <h2 class="subtitle m-2">Question #1 Goes Here</h2>
+        </div>
+
+
+        <!-- QUIZ ANSWERS -->
+        <div class="contianer">
+          <div class="columns m-1">
+            <a class="ans_container" href="#">
+              <div class="column   m-1 answer">
+                <p>answer</p>
+              </div>
+            </a>
+            <a class="ans_container" href="#">
+              <div class="column   m-1 answer">
+                <p>answer</p>
+              </div>
+            </a>
           </div>
+          <div class="columns m-1">
+            <a class="ans_container" href="#">
+              <div class="column   m-1 answer">
+                <p>answer</p>
+              </div>
+            </a>
+            <a class="ans_container" href="#">
+              <div class="column   m-1 answer">
+                <p>answer</p>
+              </div>
+            </a>
+          </div>
+
+
+        </div>
+
+
+
+
+        <!-- 
+                    <div class="m-1" id="ans">1</div>
+                    <div  class="m-1" id="ans">2</div>
+                    <div class="m-1" id="ans">3</div>
+                    <div class="m-1" id="ans">4</div> -->
 
       </div>
-     
-   
-      
-    
-    <!-- Include links to JavaScript files below -->
-    <script src="./quiz.js"></script>
 
-    <footer class="footer">
-        <div class="content has-text-centered">
-          <p>
-            <strong>UpBeat.</strong> by <a>MJ Gomez Saavedra, Erin Callahan, Annie Rudisill, and Katie Brandao</a>.
-          </p>
-        </div>
-    </footer>  
+      <button class="yellow_button m-5" id="submit-button">Submit Answers</button>
+      <!-- <button class="yellow_button" id="next-question-button">Next Question</button>
+            <button class="yellow_button" id="prev-question-button">Previous Question</button> -->
+
+    </div>
+
+  </div>
+
+
+
+
+  <!-- Include links to JavaScript files below -->
+
+
+  <!-- make teext whitee -->
+  <footer class="footer has-background-black-ter">
+    <div class="content has-text-centered has-text-white-ter">
+      <p>
+        <strong>UpBeat.</strong> by <a>MJ Gomez Saavedra, Erin Callahan, Annie Rudisill, and Katie Brandao</a>.
+      </p>
+    </div>
+  </footer>
+  <script src="./quiz.js"></script>
 
 </body>
-</html>
 
+</html>
