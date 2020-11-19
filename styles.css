@@ -8,6 +8,10 @@ were needed. You do not need to edit this file or use it in any way.
   /* height: 90vh; */
   padding-top:10vh;
 }
+
+.margin-auto {
+  margin: 0 auto;
+}
  .logo {
     background: url(images/Logo.png) no-repeat center center;
     background-size: cover;
@@ -44,7 +48,7 @@ were needed. You do not need to edit this file or use it in any way.
   padding-left: 5%;
   padding-right: 5%;
   border-style: none;
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 100%;
   font-weight: bold;
 
@@ -107,6 +111,21 @@ were needed. You do not need to edit this file or use it in any way.
   border: 1px solid black;
 }
 
+
+/* PROFILE PAGE */
+
+.profile-pic {
+  border-radius: 50%;
+  margin: 10px auto;
+  
+
+  width: 100px;
+  background-image: url('images/person.jpg');
+  height: 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 /* LOGIN/SIGNUP */
 .SignLog_banner{
