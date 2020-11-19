@@ -2,22 +2,19 @@
 This css file is here to add functionality and style elements that
 were needed. You do not need to edit this file or use it in any way.
  */
+
+ /* All MAIN containers need it to compensate for navbar */
+ .banner {
+  /* height: 90vh; */
+  padding-top:10vh;
+}
  .logo {
-    background: url(images/LS-logo.png) no-repeat center center;
+    background: url(images/Logo.png) no-repeat center center;
     background-size: cover;
     width: 200px;
-    
-    /* padding: 10%; */
-    
   }
-
+  /* INDEX */
   #home_banner{
-    background: url(images/home-banner.png) no-repeat center center;
-    background-size: cover;
-    width: 100%;
-  }
-
-  #about_banner{
     background: url(images/about-banner.png) no-repeat center center;
     background-size: cover;
     width: 100%;
@@ -38,5 +35,58 @@ were needed. You do not need to edit this file or use it in any way.
     font-family: 'Sansita Swashed', cursive;
     font-size: 6em !important;
     color:#DCD326 !important;
-    /* font-weight: lighter !important; */
+}
+
+.yellow_button {
+  background-color: #DCD326;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-style: none;
+  border-radius: 2px;
+  font-size: 100%;
+  font-weight: bold;
+
+}
+
+/* QUIZ */
+.quiz_banner{
+  height: 80vh;
+}
+
+#quiz{
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 5%;
+  text-align: center;
+}
+
+#quiz_cont{
+  background-color: lightgrey;
+  box-sizing: border-box;
+  
+}
+
+#ans{
+  width: 50%;
+  height: 50%;
+  float: left;
+  border-radius: 5px;
+  padding: 1%;
+  border: 1px solid black;
+}
+
+
+/* LOGIN/SIGNUP */
+.SignLog_banner{
+  height: 85vh;
+}
+
+.SignLog_cont {
+  align-items: center;
+  width: 25%;
+  margin: 0 auto;
+  padding-top: 20vh;
+  /* text-align: center; */
 }
