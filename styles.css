@@ -158,7 +158,7 @@ nav {
   height: 85vh;
 }
 
-.SignLog_cont {
+#SignLog_cont {
   align-items: center;
   width: 25%;
   margin: 0 auto;
