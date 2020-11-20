@@ -8,6 +8,10 @@ were needed. You do not need to edit this file or use it in any way.
   /* height: 90vh; */
   padding-top:10vh;
 }
+
+.margin-auto {
+  margin: 0 auto;
+}
  .logo {
     background: url(images/Logo.png) no-repeat center center;
     background-size: cover;
@@ -44,7 +48,7 @@ were needed. You do not need to edit this file or use it in any way.
   padding-left: 5%;
   padding-right: 5%;
   border-style: none;
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 100%;
   font-weight: bold;
 
@@ -52,20 +56,50 @@ were needed. You do not need to edit this file or use it in any way.
 
 /* QUIZ */
 .quiz_banner{
-  height: 80vh;
+  /* height: 80vh; */
+  background-color: hsl(0, 0%, 14%);
+  background-image: url('images/soundwave.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #quiz{
-  width: 50%;
+  width: 60vw;
   margin: 0 auto;
   padding-top: 5%;
   text-align: center;
 }
 
 #quiz_cont{
-  background-color: lightgrey;
-  box-sizing: border-box;
-  
+  background-color: #DCD326;
+  border-radius: 7px;
+  padding: 10px;
+  color: hsl(0, 0%, 96%);
+  /* box-sizing: border-box; */
+}
+
+.answer {
+  height: 150px;
+  color: hsl(0, 0%, 96%);
+  display: flex !important;
+  justify-content: center;
+  align-content: center;
+  border-radius: 7px;
+  background-color:hsl(0, 0%, 14%); 
+}
+
+.answer:hover {
+  opacity: .7;
+}
+
+.ans_container {
+  width: 50%;
+}
+
+.answer p{
+  margin: auto;
+  font-size: 18px;
 }
 
 #ans{
@@ -77,6 +111,21 @@ were needed. You do not need to edit this file or use it in any way.
   border: 1px solid black;
 }
 
+
+/* PROFILE PAGE */
+
+.profile-pic {
+  border-radius: 50%;
+  margin: 10px auto;
+  
+
+  width: 100px;
+  background-image: url('images/person.jpg');
+  height: 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 /* LOGIN/SIGNUP */
 .SignLog_banner{

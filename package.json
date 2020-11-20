@@ -1,0 +1,24 @@
+{
+  "name": "upbeat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "quiz.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annamac7/UpBeat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annamac7/UpBeat/issues"
+  },
+  "homepage": "https://github.com/annamac7/UpBeat#readme",
+  "dependencies": {
+    "browser-sync": "^2.26.13",
+    "bulma": "^0.9.1",
+    "hover.css": "^2.3.2"
+  }
+}
