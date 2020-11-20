@@ -2,7 +2,7 @@
   "name": "upbeat",
   "version": "1.0.0",
   "description": "",
-  "main": "quiz.js",
+  "main": "/login/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,8 +17,15 @@
   },
   "homepage": "https://github.com/annamac7/UpBeat#readme",
   "dependencies": {
+    "axios": "^0.21.0",
+    "body-parser": "^1.19.0",
     "browser-sync": "^2.26.13",
     "bulma": "^0.9.1",
-    "hover.css": "^2.3.2"
+    "cors": "^2.8.5",
+    "data-store": "^4.0.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "hover.css": "^2.3.2",
+    "jquery": "^3.5.1"
   }
 }
