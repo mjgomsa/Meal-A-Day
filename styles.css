@@ -132,7 +132,7 @@ were needed. You do not need to edit this file or use it in any way.
   height: 85vh;
 }
 
-.SignLog_cont {
+#SignLog_cont {
   align-items: center;
   width: 25%;
   margin: 0 auto;
