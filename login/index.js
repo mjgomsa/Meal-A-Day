@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 // import {require} from "."
+=======
+// import { require } from "../node_modules";
+
+
+>>>>>>> 360bd8e72978585d1da67b024f251fc567bc7fb3
 const express = require('express');
 
 const app = express();
@@ -10,8 +16,13 @@ const expressSession = require('express-session');
 let cors = require('cors');
 
 const corsConfi = {
+<<<<<<< HEAD
     // origin: "http://localhost:3002", //LOCAL
     origin: "http://localhost:3000", //HEROKU
+=======
+    origin: "https://meal-a-day.herokuapp.com/", //LOCAL
+    //origin: "http://localhost:3000", //HEROKU
+>>>>>>> 360bd8e72978585d1da67b024f251fc567bc7fb3
     credentials: true
   }
   app.use(cors(corsConfi));
@@ -24,11 +35,12 @@ app.use(expressSession({
     saveUninitialized: false
 }));
 
-const Secret = require("./Secret.js");
+const Secret = require("./secret.js");
 
 const login_data = require('data-store')({ path: process.cwd() + '/login/users.json' });
 
 app.post('/createUser', (req, res) =>{
+    console.log("here")
     let user = req.body.username;
     let data = req.body
     if(login_data.get(user) == null){
@@ -43,7 +55,7 @@ app.post('/createUser', (req, res) =>{
 
 
 app.post('/login', (req,res) => {
-
+    console.log('hey')
     let user = req.body.user;
     let password = req.body.password;
 

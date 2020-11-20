@@ -8,13 +8,15 @@ $(document).on('click', "#sumbitNew", async(event) => {
 
     const result = await axios( {
         method: 'post',
-        url: 'http://localhost:3002/createUser', //LOCAL
+        url: 'https://meal-a-day.herokuapp.com/createUser', //LOCAL
         data: {
-            username: email,
-            password: pass
+            username: `${email}`,
+            password: `${pass}`
         },
         withCredentials: true
 
+    }).catch(() => {
+        console.log('hey')
     });
     console.log(result)
 

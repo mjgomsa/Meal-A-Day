@@ -9,6 +9,10 @@ were needed. You do not need to edit this file or use it in any way.
   padding-top:10vh;
 }
 
+nav {
+  padding: 5px;
+}
+
 .margin-auto {
   margin: 0 auto;
 }

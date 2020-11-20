@@ -2,7 +2,7 @@
   "name": "upbeat",
   "version": "1.0.0",
   "description": "",
-  "main": "/login/index.js",
+  "main": "login_render.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,11 +17,25 @@
   },
   "homepage": "https://github.com/annamac7/UpBeat#readme",
   "dependencies": {
+<<<<<<< HEAD
     "browser": "^0.2.6",
     "browser-sync": "^2.26.13",
     "bulma": "^0.9.1",
     "hover.css": "^2.3.2",
     "requirejs": "^2.3.6",
     "sync": "^0.2.5"
+=======
+    "axios": "^0.21.0",
+    "body-parser": "^1.19.0",
+    "browser-sync": "^2.26.13",
+    "bulma": "^0.9.1",
+    "cors": "^2.8.5",
+    "data-store": "^4.0.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "hover.css": "^2.3.2",
+    "jquery": "^3.5.1",
+    "requirejs": "^2.3.6"
+>>>>>>> 360bd8e72978585d1da67b024f251fc567bc7fb3
   }
 }
