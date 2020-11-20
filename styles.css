@@ -12,6 +12,17 @@ were needed. You do not need to edit this file or use it in any way.
 .margin-auto {
   margin: 0 auto;
 }
+
+.extra-margin {
+  margin: 0 100px;
+}
+
+.is_flex_wrap {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+
  .logo {
     background: url(images/Logo.png) no-repeat center center;
     background-size: cover;
@@ -19,10 +30,20 @@ were needed. You do not need to edit this file or use it in any way.
   }
   /* INDEX */
   #home_banner{
-    background: url(images/about-banner.png) no-repeat center center;
+    /* background: url(images/hero.png) no-repeat center center; */
     background-size: cover;
     width: 100%;
+    color: #ee6d66 !important;
+    background:#f3f3f4;
   }
+
+#hero_img {
+      background: url(images/groceries.png) no-repeat center center;
+      width: 300px;
+      height: 250px;
+      background-size: contain;
+      margin: 30px;
+}
 
   #logo_font{
     font-family: 'Libre Baskerville', serif;
@@ -38,26 +59,27 @@ were needed. You do not need to edit this file or use it in any way.
 .is-family-secondary{
     font-family: 'Sansita Swashed', cursive;
     font-size: 6em !important;
-    color:#DCD326 !important;
+    color:#ee6d66 !important;
 }
 
 .yellow_button {
-  background-color: #DCD326;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  padding-left: 5%;
-  padding-right: 5%;
+  background-color: #ee6d66;
+  padding: 10px;
   border-style: none;
   border-radius: 4px;
   font-size: 100%;
-  font-weight: bold;
+  font-weight: normal;
+}
 
+
+#about_banner {
+  margin: 0 50px;
 }
 
 /* QUIZ */
 .quiz_banner{
   /* height: 80vh; */
-  background-color: hsl(0, 0%, 14%);
+  background-color:#f2e2d9;
   background-image: url('images/soundwave.png');
   background-position: center;
   background-size: contain;
@@ -72,7 +94,7 @@ were needed. You do not need to edit this file or use it in any way.
 }
 
 #quiz_cont{
-  background-color: #DCD326;
+  background-color: #ee6d66;
   border-radius: 7px;
   padding: 10px;
   color: hsl(0, 0%, 96%);
@@ -86,7 +108,7 @@ were needed. You do not need to edit this file or use it in any way.
   justify-content: center;
   align-content: center;
   border-radius: 7px;
-  background-color:hsl(0, 0%, 14%); 
+  background-color:#f3f3f4; 
 }
 
 .answer:hover {
