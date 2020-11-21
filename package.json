@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/annamac7/UpBeat#readme",
   "dependencies": {
+    "axios": "^0.21.0",
     "browser": "^0.2.6",
     "browser-sync": "^2.26.13",
     "bulma": "^0.9.1",
+    "express-session": "^1.17.1",
     "hover.css": "^2.3.2",
     "requirejs": "^2.3.6",
     "sync": "^0.2.5"

@@ -28,7 +28,7 @@
         </div>
       </nav>
 
-      <signup-login></signup-login>
+
       <div class = "SignLog_banner banner">
         <div id= "SignLog_cont">
           <div class="login-card">
@@ -36,39 +36,45 @@
               <h1 class="title">Log In</h1>
             </div>
           </div>
-  
+
+            <!-- id= rtrnUsername  -->
             <div class="field">
                 <div class="control has-icons-left has-icons-right">
-                  <input id="newEmail" class="input" type="email" placeholder="Email" required autofocus>
+                  <input id="rtrnUsername" class="input" type="text" placeholder="Username" required autofocus>
                   <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-user"></i>
                   </span>
                   <span class="icon is-small is-right">
                     <i class="fas fa-check"></i>
                   </span>
                 </div>
               </div>
+
+              <!-- id = rtrnPass -->
               <div class="field">
                 <div class="control has-icons-left"></p>
-                  <input id="newPass" class="input" type="password" placeholder="Password" required>
+                  <input id="rtrnPass" class="input" type="text" placeholder="Password" required>
                   <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
                   </span>
                 </div>
               </div>
+
+              <!-- id = submitRtrnAccount -->
               <div class="field">
                 <div class="control">
-                  <button id="sumbitNew"class="button yellow_button">
+                  <button id="submitRtrnAccount"class="button yellow_button">
                     Log In
                   </button>
                 </div>
               </div>
               <div class="field">
-                  <span style="color: grey;">Already have an Account? Click here to 
-                      <a href="./logIn.html">Log In</a>
+                  <span style="color: grey;">Don't have an Account? Click here to 
+                      <a href="./signUp.html">Sign Up</a>
                   </span>
               </div>
         </div>
+        <div id="messages"></div>
       </div>
 
 
@@ -83,8 +89,10 @@
     </footer>
 
      <!-- Include links to JavaScript files below -->
-     <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-     <script src="script.js"></script> -->
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+     <script src="node_modules/axios/dist/axios.js"></script>
+     <script src="logSign.js"></script>
+
 
 </body>
 </html>

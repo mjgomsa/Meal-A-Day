@@ -43,30 +43,58 @@
               <h1 class="title">Sign Up</h1>
             </div>
           </div>
-  
+
+          <!-- id= username -->
             <div class="field">
-                <div class="control has-icons-left has-icons-right">
-                  <input id="newEmail" class="input" type="email" placeholder="Email" required autofocus>
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
-                  </span>
-                  <span class="icon is-small is-right">
-                    <i class="fas fa-check"></i>
-                  </span>
-                </div>
+              <div class="control has-icons-left has-icons-right">
+                <input id="username" class="input" type="text" placeholder="Username" required autofocus>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+                <span class="icon is-small is-right">
+                  <i class="fas fa-check"></i>
+                </span>
               </div>
+            </div>
+
+            <!-- id= name -->
+            <div class="field">
+              <div class="control has-icons-left has-icons-right">
+                <input id="name" class="input" type="text" placeholder="Name" required autofocus>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user-check"></i>
+                </span>
+                <span class="icon is-small is-right">
+                  <i class="fas fa-check"></i>
+                </span>
+              </div>
+            </div>
+
+              <!-- id = pass1 -->
               <div class="field">
                 <div class="control has-icons-left"></p>
-                  <input id="newPass" class="input" type="password" placeholder="Password" required>
+                  <input id="pass1" class="input" type="password" placeholder="Password" required>
                   <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
                   </span>
                 </div>
               </div>
+
+              <!-- id = pass2 -->
+              <div class="field">
+                <div class="control has-icons-left"></p>
+                  <input id="pass2" class="input" type="password" placeholder="Confirm Password" required>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </div>
+              </div>
+              
+              <!-- id = submitNewAccount -->
               <div class="field">
                 <div class="control">
-                  <button id="sumbitNew"class="button yellow_button">
-                    Sign Up
+                  <button id="submitNewAccount"class="button yellow_button">
+                    Create Account
                   </button>
                 </div>
               </div>
@@ -77,10 +105,7 @@
               </div>
         </div>
       </div>
-
-
     
-
     <footer class="footer">
         <div class="content has-text-centered">
           <p>
@@ -88,6 +113,11 @@
           </p>
         </div>
       </footer>
+
+      <!-- Include links to JavaScript files below -->
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="node_modules/axios/dist/axios.js"></script>
+      <script src="logSign.js"></script>
 
 </body>
 </html>

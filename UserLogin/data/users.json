@@ -1,0 +1,20 @@
+{
+  "kmp": {
+    "password": "pass123",
+    "name": "Ketan Patel",
+    "email": "kmp@gmail.com"
+  },
+  "mjgomsa": {
+    "password": "test",
+    "name": "MJ Gomez-Saavedra",
+    "email": "mjgomsa@live.unc.edu"
+  },
+  "ana": {
+    "user": "ana",
+    "password": "cookie123"
+  },
+  "katie": {
+    "user": "katie",
+    "password": "pass456"
+  }
+}
