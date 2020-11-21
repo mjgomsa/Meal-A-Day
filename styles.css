@@ -10,7 +10,7 @@ were needed. You do not need to edit this file or use it in any way.
 }
 
 nav {
-  padding: 5px;
+  padding: 10px;
 }
 
 .margin-auto {
@@ -24,6 +24,7 @@ nav {
 .is_flex_wrap {
   display: flex;
   flex-wrap: wrap-reverse;
+
 }
 
 
@@ -84,7 +85,7 @@ nav {
 .quiz_banner{
   /* height: 80vh; */
   background-color:#f2e2d9;
-  background-image: url('images/soundwave.png');
+  /* background-image: url('images/soundwave.png'); */
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -107,7 +108,7 @@ nav {
 
 .answer {
   height: 150px;
-  color: hsl(0, 0%, 96%);
+  color: hsl(0, 3%, 15%);
   display: flex !important;
   justify-content: center;
   align-content: center;
@@ -151,6 +152,14 @@ nav {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+
+
+
+.cardRoot .box {
+  width: 400px;
+
 }
 
 /* LOGIN/SIGNUP */

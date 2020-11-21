@@ -10,6 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700;900&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/3e0c7ee1b1.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="node_modules/hover.css/css/hover.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <script src="quiz.js" type="module"></script>
 
   <link rel="icon" href="images/favicon.png">
   <title>Meal-A-Day: Quiz</title>
@@ -27,24 +30,27 @@
     </div>
     <div class="navbar-menu" id="navMenu">
       <div class="navbar-start">
-        <a href="./index.html" class="navbar-item brackets">Home</a>
+        <a href="./index.html" class="navbar-item brackets has-text-dark">Home</a>
         <a href="./index.html" class="navbar-item brackets">About</a>
         <a href="./quiz.html" class="navbar-item brackets">Take Quiz</a>
-        <a href="./profil.html" class="navbar-item brackets">My Profile</a>
+        <a href="./profile.html" class="navbar-item brackets">My Profile</a>
       </div>
     </div>
     <div class="navbar-end">
 
     </div>
   </nav>
+  
+  <div id="root"></div>
 
   <!-- Quiz Container -->
+
   <div class="quiz_banner banner">
     <div id="quiz">
-      <h1 class="title has-text-white-ter" id="quiz-name">Let's guess your mood</h1>
+      <h2 class="title has-text-dark" id="quiz-name">Let's guess your mood</h2>
       <div id="quiz_cont">
         <div class="question">
-          <h2 class="subtitle m-2">Question #1 Goes Here</h2>
+          <h3 class="subtitle m-2">Question #1 Goes Here</h3>
         </div>
 
 
@@ -79,23 +85,14 @@
         </div>
 
 
-
-
-        <!-- 
-                    <div class="m-1" id="ans">1</div>
-                    <div  class="m-1" id="ans">2</div>
-                    <div class="m-1" id="ans">3</div>
-                    <div class="m-1" id="ans">4</div> -->
-
       </div>
 
-      <button class="yellow_button m-5 hvr-push " id="submit-button">Submit Answers</button>
+      <button class="yellow_button m-5 hvr-push " id="submit-button">Submit Answers</button> 
       <!-- <button class="yellow_button" id="next-question-button">Next Question</button>
             <button class="yellow_button" id="prev-question-button">Previous Question</button> -->
 
-    </div>
-
-  </div>
+      </div>
+      </div>
 
 
 
@@ -104,7 +101,7 @@
 
 
   <!-- make teext whitee -->
-  <footer class="footer has-background-black-ter">
+  <footer class="footer has-background-light">
     <div class="content has-text-centered has-text-white-ter">
       <p>
         <strong>Meal-A-Day.</strong> by <a>MJ Gomez Saavedra, Erin Callahan, Annie Rudisill, and Katie Brandao</a>.
