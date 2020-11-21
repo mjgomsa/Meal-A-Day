@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3e0c7ee1b1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="node_modules/hover.css/css/hover.css">
-
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="profile.js"></script>
     <link rel="icon" href="images/favicon.png">
     <title>Meal-A-Day: Profile</title>
 </head>
@@ -30,23 +31,43 @@
                 <a href="./index.html" class="navbar-item brackets">Home</a>
                 <a href="./index.html" class="navbar-item brackets">About</a>
                 <a href="./quiz.html" class="navbar-item brackets">Take Quiz</a>
-                <a href="./profil.html" class="navbar-item brackets">My Profile</a>
+                <a href="./profile.html" class="navbar-item brackets">My Profile</a>
             </div>
         </div>
         <div class="navbar-end"></div>
     </nav>
-    <div class="banner has-background-black-ter	">
-        <h1 class="is-family-secondary m-5 has-text-centered">My Profile</h1>
+    <div class="banner has-background-light">
+        <h2 class="is-family-secondary m-5 has-text-centered">My Profile</h2>
 
+        <!-- <div class="box">
+            <img class="recipe_img" src="images/test.jpg">
+            <a id="${recipe.id}close" class="delete is-pulled-right"></a>
+            <article class="media">
+                <div class="content">
+                    <p>
+                        <strong> <a href="${recipe.url}">${recipe.label}</a></strong><small> ${recipe.createdAt}</small>
+                        <br>
+                        <small>${recipe.cals} cals</small>
+                        <br>
+                        ${list}
+                        </p>
+                </div>
+            </article>
+            <div class="tags mt-3">
+                <span class="tag">${dishType}</span>
+                <span class="tag">${dietLabel}</span>
+                <span class="tag">${healthLabel}</span>
+            </div>
+        </div> -->
         <!-- profile body -->
         <div class="section">
             <div class="container ">
 
 
+                <!-- profile -->
                 <div class="columns">
-
-                    <!-- profile -->
-                    <div class="column is-one-quarter m-1">
+                    <div class="column is-one-quarter">
+                        <!-- profile card -->
                         <div class="card m-2">
                             <div class="profile-pic p-2"></div>
                             <div class="card-content">
@@ -61,26 +82,31 @@
                         </div>
                     </div>
 
-                    <!-- playlists -->
-                    <div class="column m-1">
-                        <button class="button yellow_button mb-3">Edit Playlist</button>
-                        <div>
-                            <iframe class="margin-auto"
-                                src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300"
-                                height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                        </div>
-                    </div>
-                    <div class="column m-1">
-                        <button class="button yellow_button mb-3">Edit Playlist</button>
-                        <div>
-                            <iframe class="margin-auto"
-                                src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300"
-                                height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <!-- existing recipes -->
+                    <div class="column">
+                        <h3 class=" is-size-3">Existing Recipes</h3>
+                        <div class="columns is-mobile">
+                            <div class="column  m-1">
+
+                                <!-- recipe card -->
+                                <div class="cardRootOdd"></div>
+                            </div>
+                            <div class="column  m-1">
+                                <div class="cardRootEven"></div>
+                                
+                            </div>
+
                         </div>
                     </div>
                 </div>
+
+
+
+
+
             </div>
         </div>
+    </div>
     </div>
 
 
