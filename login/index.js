@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-// import {require} from "."
-=======
-// import { require } from "../node_modules";
 
-
->>>>>>> 360bd8e72978585d1da67b024f251fc567bc7fb3
 const express = require('express');
 
 const app = express();
@@ -16,13 +10,8 @@ const expressSession = require('express-session');
 let cors = require('cors');
 
 const corsConfi = {
-<<<<<<< HEAD
     // origin: "http://localhost:3002", //LOCAL
     origin: "http://localhost:3000", //HEROKU
-=======
-    origin: "https://meal-a-day.herokuapp.com/", //LOCAL
-    //origin: "http://localhost:3000", //HEROKU
->>>>>>> 360bd8e72978585d1da67b024f251fc567bc7fb3
     credentials: true
   }
   app.use(cors(corsConfi));
