@@ -1,5 +1,3 @@
-// import { require } from "../node_modules";
-
 
 const express = require('express');
 
@@ -12,8 +10,8 @@ const expressSession = require('express-session');
 let cors = require('cors');
 
 const corsConfi = {
-    origin: "https://meal-a-day.herokuapp.com/", //LOCAL
-    //origin: "http://localhost:3000", //HEROKU
+    // origin: "http://localhost:3002", //LOCAL
+    origin: "http://localhost:3000", //HEROKU
     credentials: true
   }
   app.use(cors(corsConfi));
