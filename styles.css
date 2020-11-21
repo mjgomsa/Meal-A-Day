@@ -154,12 +154,20 @@ nav {
   background-position: center;
 }
 
+.delete {
+  position: relative;
+  top: 0px;
+  right: 0px;
+  
+}
 
+.recipe_img {
+  width: 100%;
+}
 
 
 .cardRoot .box {
   width: 400px;
-
 }
 
 /* LOGIN/SIGNUP */
