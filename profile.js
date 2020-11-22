@@ -51,7 +51,7 @@ function renderRecipeCard(recipe) {
     console.log(dishType)
 
 
-    let card = `<div class="box">
+    let card = `<div class="box" id="recipeBox">
     
   <img class="recipe_img" src="${recipe.img}">
     <article class="media">
@@ -72,8 +72,8 @@ function renderRecipeCard(recipe) {
         <span class="tag">${healthLabel}</span>
     </div>
     <div class="tags">
-      <button id="${recipe.id}close" class="button m-1 is-small is-danger">Delete <i class="ml-1 far fa-trash-alt"></i></button>
-      <button id="${recipe.id}edit" class="button is-info m-1 is-small">Edit <i class="ml-1 fas fa-edit"></i></button>
+      <button id="${recipe.id}close" class="delete" class="button m-1 is-small is-danger">Delete <i class="ml-1 far fa-trash-alt"></i></button>
+      <button id="${recipe.id}edit" class ="edit" class="button is-info m-1 is-small">Edit <i class="ml-1 fas fa-edit"></i></button>
     </div>
     
     
@@ -81,6 +81,25 @@ function renderRecipeCard(recipe) {
 
 
     return card
+}
+
+function handleEditButton(event){
+    event.preventDefault();
+
+    let editForm = `
+    `;
+
+    $('#recipeBox').replaceWith(editForm);
+
+}
+
+function handleDeleteButton(event){
+    event.preventDefault();
+    //insert axios call
+
+    $('#recipeBox').replaceWith(``);
+    
+
 }
 
 
@@ -98,8 +117,10 @@ $(function () {
         }
 
     }
+    $(document).on('click', '.edit', handleEditButton);
+    $(document).on('click', '.delete', handleDeleteButton);
 });
-
+/*
 $(document).on('click', '.delete', async (e) => {
     let currBtn = e.currentTarget.id;
     console.log('click')
@@ -109,12 +130,14 @@ $(document).on('click', '.delete', async (e) => {
 
     /* TODO: 
     delete that recipe from the back end
-    remove from front end with .remove() */
+    remove from front end with .remove() 
 
 
     console.log(curr)
 
 });
+*/
+
 
 //gets the specific recipe id
 function getID(string) {
