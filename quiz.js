@@ -1,291 +1,294 @@
-// // want these to be available in other files
-// export let finalSongs;
-// export let arrayOfLists;
+//global mood counters
+var happyPoints = 0;
+var sadPoints = 0;
+var angryPoints = 0;
+var excitedPoints = 0;
+var questionCount = 0;
+var tempCounter = 0;
+
+let success = true;
 
 
-// //global mood counters
-// var happyPoints = 0;
-// var sadPoints = 0;
-// var angryPoints = 0;
-// var anxiousPoints = 0;
-// var excitedPoints = 0;
+// global array --- somehow make this a secret value ??
+let allRecipes = [];
 
-// //counter for number of questions called
-// var questionCount = 0;
+var tempData = copyData(questions);
 
-// var tempCounter = 0;
+export function copyData(questions){
+  let copyarr = [];
+  for(let i = 0; i < questions.length; i++){
+    copyarr[i] = questions[i];
+  }
+  return copyarr;
+}
 
-// //copy of questions array of objects
-// var tempData = copyData(questions);
+export const handleAnswerButton = function(event){
+  event.preventDefault();
 
-// export function copyData(questions){
-//   let copyarr = [];
-//   for(let i = 0; i < questions.length; i++){
-//     copyarr[i] = questions[i];
-//   }
-//   return copyarr;
-// }
+  //console.log(event.target);
 
-// // html of page header/nav bar
-// /*HTML NEEDED:
-//   - header of page, inclduign nav bar
-//   - anything else you want to add at the top
-// */
-// export function pageSet(){
-//     return `<div id="root">
-//     <section id="header">
-//         <div class ="title_Div"> 
-//           <i class="fab fa-twitter"></i>
-//           <h1> 426 Twitter </h1>
-//           <h5> by: MJ Gomez-Saavedra </h5>
-//             <button class="button_Refresh button">
-//               <i class="fas fa-redo-alt"></i> 
-//               Refresh Feed
-//             </button>
-//             <button class="button_NewTweet button">
-//               <i class="fas fa-plus"></i>
-//                New Tweet
-//             </button>
-//         </div>
-//     </section>
-// <section id="mainContainer">
-//     <div id="feed">
-//     </div>
-// </section>            
-// </div>`;
+    // PROBLEM HERE -- if you click on the words, it doesn't return the correct html element
+  let tracker = event.target.getAttribute('id');
 
-// }
+    if(tracker == "happy"){
+      happyPoints++;
+    }else if(tracker == "sad"){
+      sadPoints++;
+    }else if(tracker == "angry"){
+      angryPoints++;
+    }else{
+      excitedPoints++;
+    }
 
-// //first button - top left
-// //button associated with top left answer, id assigned to each answer which indicates mood. function goes through if statements to determine mood and increment appropriate mood counter
-// /*HTML NEEDED:
-//   - pop up window with button for re-directing to existing playlist
-// */
-// export const handleAnswerButton = function(event){
-//   event.preventDefault();
+  if(questionCount < 8){
+    $('#entirePage').replaceWith(renderQuestion());
 
-//   let tracker = event.target.getAttribute('id');
-//     let answerId = $("#"+tracker);
-//     if(answerId == "happy"){
-//       happyPoints++;
-//     }else if(answerId == "sad"){
-//       sadPoints++;
-//     }else if(answerId == "anxious"){
-//       anxiousPoints++;
-//     }else if(answerId == "angry"){
-//       angryPoints++;
-//     }else{
-//       excitedPoints++;
-//     }
+  } else {
+    createRecipe();
+  }
+}
 
-//     if(questionCount < 7){
-//       $('#'+event.target.getAttribute('quizData')).replaceWith(renderQuestion());
-//     } else {
-//        createPlaylist(finalSongs);
+export const renderQuestion = function(){
+  //  console.log(questionCount);
+  if(questionCount < 8){
+    questionCount++;
+    var randomNumber = Math.floor(Math.random() * Math.floor(9 - tempCounter)); // change back to 24 when all the questions are in
 
-//       //HTML INSERTED HERE
-//       let popup = <div class="popup">
-//                     <a href="existingPlaylist.js"> 
-//                         <button class="submit" type="submit">Submit Quiz</button>
-//                     </a>
-//                   </div>;
-//       // automatically call handleSubmit and produce pop up window with button to existing playlist page
-//     }
-// }
+    let question =    `<div id="entirePage" class="quiz_banner banner">
+                        <div id="quiz">
+                            <h2 class="title has-text-dark" id="quiz-name">Let's guess your mood</h2>
+                                <div id="quiz_cont">
+                                    <div class="question">
+                                        <h3 class="subtitle m-2">${tempData[randomNumber].q}</h3>
+                                    </div>
 
 
-// //renders html for question, including buttons
-// /*HTML NEEDED:
-//   - question container
-//   - 4 buttons in grid
-// */
-// export const renderQuestion = function(){
-//   if(questionCount < 7){
-//     questionCount++;
+                                    <!-- QUIZ ANSWERS -->
+                                    <div class="container">
+                                        <div class="columns m-1">
+                                            <a class="ans_container" class="answer" href="#">
+                                                <div class="column hvr-shrink   m-1 answer" id="${tempData[randomNumber].m[0]}">
+                                                    <p>${tempData[randomNumber].a[0]}</p>
+                                                </div>
+                                            </a>
+                                            <a class="ans_container" class="answer" href="#">
+                                                <div class="column hvr-shrink  m-1 answer" id="${tempData[randomNumber].m[1]}">
+                                                    <p>${tempData[randomNumber].a[1]}</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="columns m-1">
+                                            <a class="ans_container" class="answer" href="#">
+                                                <div class="column hvr-shrink  m-1 answer" id="${tempData[randomNumber].m[2]}">
+                                                    <p>${tempData[randomNumber].a[2]}</p>
+                                                </div>
+                                            </a>
+                                            <a class="ans_container" class="answer" href="#">
+                                                <div class="column hvr-shrink  m-1 answer" id="${tempData[randomNumber].m[3]}">
+                                                    <p>${tempData[randomNumber].a[3]}</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
 
-//     var randomNumber = Math.random(9 - tempCounter); // change back to 24 when all the questions are in
-//     let question =  `<div class="container" quizData="question">
-//                         <div>
-//                           <button id=${tempData[randomNumber].m[1]} class="answer">${tempData[randomNumber].a[1]}
-//                           <button id=${tempData[randomNumber].m[2]} class="answer">${tempData[randomNumber].a[2]}
-//                           <button id=${tempData[randomNumber].m[3]} class="answer">${tempData[randomNumber].a[3]}
-//                           <button id=${tempData[randomNumber].m[4]} class="answer">${tempData[randomNumber].a[4]}
-//                         </div>
-//                       </div>`;
+    let deletedQuestion = tempData.splice(randomNumber,1);
+    tempCounter++;
+
+
+    // PROBLEM HERE - how do we submit from the final question ??
+
     
-//     //each time question called, remove question from tempData
-//     // splice removes the one question at the index of the random number in tempData
-//     let deletedQuestion = tempData.splice(randomNumber,1);
-//     //console.log(tempData);
-//     tempCounter++;
-//     return question;
-//   } else {                                                                                   
-//     finalQuestion();
-//     break;
-//   }
-// }
+    // if(questionCount == 7){
+    //     question += `<div>
+    //                 <a href="profile.html"><button class="submit" type="submit">Submit Answers!</button></a>
+    //                     </div>;
+    //                 </div>
+    //             </div>`;
+    // }
 
-// export const handleSubmit = function(){
-//  //contains playlist object
-//   let happyList = makeHappy();
-//   let sadList = makeSad();
-//   let angryList = makeAngry();
-//   let anxiousList = makeAnxious();
-//   let excitedList = makeExcited();
+    return question;
+  }
+}
 
-//   //checks if there are ___ points, for loop that randomly selects a track from the pre-generated list of songs and adds to final song list
-//   if(sadPoints > 0){
-//     sadPoints = sadPoints * 3;
-//     for(let i = 0; i < sadPoints; i++){
-//       let randomNumber = Math.random(24);
-//       finalSongs[i] = sadList.tracks[randomNumber];
-//       //delete randomly selected song from sadList array of tracks
-//       sadList.tracks.filter(song => song != finalSongs[i]);
-//     }
-//   }
+export async function makeFoodList(foodList){
+  let foodObjArr = [];
 
-//   if(happyPoints > 0){
-//     happyPoints = happyPoints * 3;
-//     for(let i = 0; i < happyPoints; i++){
-//       let randomNumber = Math.random(24);
-//       finalSongs[i] = happyList.tracks[randomNumber];
-//       //delete randomly selected song from sadList array of tracks
-//       happyList.tracks.filter(song => song != finalSongs[i]);
-//     }
-//   }
-
-//   if(angryPoints > 0){
-//     angryPoints = angryPoints * 3;
-//     for(let i = 0; i < angryPoints; i++){
-//       let randomNumber = Math.random(24);
-//       finalSongs[i] = angryList.tracks[randomNumber];
-//       //delete randomly selected song from sadList array of tracks
-//       angryList.tracks.filter(song => song != finalSongs[i]);
-//     }
-//   }
-
-//   if(anxiousPoints > 0){
-//     anxiousPoints = anxiousPoints * 3;
-//     for(let i = 0; i < sadPoints; i++){
-//       let randomNumber = Math.random(24);
-//       finalSongs[i] = anxiousList.tracks[randomNumber];
-//       //delete randomly selected song from sadList array of tracks
-//       anxiousList.tracks.filter(song => song != finalSongs[i]);
-//     }
-//   }
-
-//   if(excitedPoints > 0){
-//     excitedPoints = excitedPoints * 3;
-//     for(let i = 0; i < excitedPoints; i++){
-//       let randomNumber = Math.random(24);
-//       finalSongs[i] = excitedList.tracks[randomNumber];
-//       //delete randomly selected song from sadList array of tracks
-//       excitedList.tracks.filter(song => song != finalSongs[i]);
-//     }
-//   }
-
-//   //****** either redirect to existing playlists that has the new list OR new html w a button below it to take to existing playlists
+  try { 
+    for(let i = 0; i < foodList.length; i++){
+      const result = await axios({
+          method: 'get',
+          url: 'https://api.edamam.com/search?app_id=a827a21b&app_key=ec74908f00f3210c21a1a90c37518b97&q='+foodList[i],
+        });
   
+      foodObjArr[i] = result.data;
+    }
+  } catch(err){
+    success = false;
+   // console.log(success);
+    let popUp = `<div id="entirePage">
+                <section class = "section">
+                <br>
+                <br>
+                <br>
+                <div class = "container">
+                  <br>
+                  <br>
+                  <div id = "modal" class = "modal is-active">
+                      <div class = "modal-background"></div>
+                        <div class = "modal-content">
+                            <div class="card">
+                                <div class="card-content">
+                                <p class="title" style="text-align:center">
+                                    Just one second...
+                                </p>
+                                <br>
+                                <p class="subtitle" style="text-align:center">
+                                   We are having some trouble connecting to the network, please wait at least a minute before retaking the quiz
+                                </p>
+                            </div>
+                            <footer class="card-footer">
+                                <p class="card-footer-item">
+                                <a href="index.html"><button class="button" id="profileButton">Return to Home</button></a>
+                                </p>
+                            </footer>
+                        </div>
+                        </div>
+                        <button class = "modal-close is-large" aria-label = "close"></button>
+                    </div>
+                    </div>
+                </section>
+                </div>`;
+
+    $('#entirePage').replaceWith(popUp);
+  }
+    
+  console.log(foodObjArr);
+  findFinalRecipe(foodObjArr);
+}
+
+export async function findFinalRecipe(foodObjArr){
+  let randomNumber  = Math.floor(Math.random() * Math.floor(foodObjArr.length));     // give a random number to choose from the foot types
+
+  let finalFoodType = foodObjArr[randomNumber].hits;                                 // gives the 10 recipes for that food type
+
+  let randomNumber2 = Math.floor(Math.random() * Math.floor(foodObjArr[randomNumber].hits));  // gives a random number to choose from the recipes
+
+  console.log(finalFoodType);
+
+  let finalRecipe = finalFoodType[randomNumber2];                               // gives the final random recipe for your mood
+
+  allRecipes.push(finalRecipe);                                                       // pushes the recipe onto the list of all recipes
+
+}
+
+export async function createRecipe(){
+  // 5 most popular food types in the world sorted with moods happy, sad, angry, anxious, and excited
+  let happyOptions = ["chicken", "salad", "tacos", "american"];
+  let sadOptions = ["chinese", "pizza", "soup", "icecream"];
+  let angryOptions = ["mexican", "indian", "beef", "vegetables"];
+  let excitedOptions = ["italian", "steak", "fried", "pasta"];
+
+  let pointsArray = [];
+
+  pointsArray.push(happyPoints);
+  pointsArray.push(sadPoints);
+  pointsArray.push(angryPoints);
+  pointsArray.push(excitedPoints);
+
+    for(let i = 0; i < pointsArray.length; i++){
+        pointsArray[i] = Math.ceil(pointsArray[i] / 2);
+    }
+    let finalFoodArray = [];
+
+    if(pointsArray[0] > 1){
+        for(let i = 0; i < pointsArray[0]; i++){
+            let randomNumber = Math.floor(Math.random() * Math.floor(pointsArray[0]));
+            finalFoodArray.push(happyOptions[randomNumber]);
+        }
+    }
+    if(pointsArray[1] > 1){
+        for(let i = 0; i < pointsArray[1]; i++){
+            let randomNumber = Math.floor(Math.random() * Math.floor(pointsArray[1]));
+            finalFoodArray.push(sadOptions[randomNumber]);
+        }
+    }
+    if(pointsArray[2] > 1){
+        for(let i = 0; i < pointsArray[2]; i++){
+            let randomNumber = Math.floor(Math.random() * Math.floor(pointsArray[2]));
+            finalFoodArray.push(angryOptions[randomNumber]);
+        }
+    }
+    if(pointsArray[3] > 1){
+        for(let i = 0; i < pointsArray[3]; i++){
+            let randomNumber = Math.floor(Math.random() * Math.floor(pointsArray[3]));
+            finalFoodArray.push(excitedOptions[randomNumber]);
+        }
+    }
+  makeFoodList(finalFoodArray);
+ //console.log(success);
+  if(success){
+    let popUp = `<div id="entirePage">
+                <section class = "section">
+                <br>
+                <br>
+                <br>
+                <div class = "container">
+                  <br>
+                  <br>
+                  <div id = "modal" class = "modal is-active">
+                      <div class = "modal-background"></div>
+                        <div class = "modal-content">
+                            <div class="card">
+                                <div class="card-content">
+                                <p class="title" style="text-align:center">
+                                    Congratulations! 
+                                </p>
+                                <br>
+                                <p class="subtitle" style="text-align:center">
+                                    We have chosen a recipe for you based on your current mood
+                                </p>
+                            </div>
+                            <footer class="card-footer">
+                                <p class="card-footer-item">
+                                <a href="profile.html"><button class="button" id="profileButton">Go to My Recipe</button></a>
+                                </p>
+                            </footer>
+                        </div>
+                        </div>
+                        <button class = "modal-close is-large" aria-label = "close"></button>
+                    </div>
+                    </div>
+                </section>
+                </div>`;
+
+    $('#entirePage').replaceWith(popUp); 
+  }
+}
+
+// export const handleProfileButton = function(event){
+//     event.preventDefault();
+
+//     console.log(5);
+
+//     window.location.replace(profile.html);
+
 // }
 
-// export async function makeHappy(){
-//   //make axios request to form playlist
-//   //return playlist object
-//   const result = await axios({
-//     method: 'get',
-//     url: 'https://api.spotify.com/v1/recommendations',
-//     limit: 24,
-//     seed_genres: "power-pop", "pop", "country", "indie-pop", "happy"
-//   });
-//   return result; 
-// }
-// export async function makeSad(){
-//   //make axios request to form playlist
-//   const result = await axios({
-//     method: 'get',
-//     url: 'https://api.spotify.com/v1/recommendations',
-//     limit: 24,
-//     seed_genres: "accoustic", "sad", "songwriter", "rainy-day", "emo"
-//   });
-//   return result;
-// }
-// export async function makeAngry(){
-//   //make axios request to form playlist
-//   const result = await axios({
-//     method: 'get',
-//     url: 'https://api.spotify.com/v1/recommendations',
-//     limit: 24,
-//     seed_genres: "rock", "rock-n-roll", "dubset", "punk", "metal"
-//   });
-//   return result;
-// }
-// export async function makeAnxious(){
-//   //make axios request to form playlist
-//   const result = await axios({
-//     method: 'get',
-//     url: 'https://api.spotify.com/v1/recommendations',
-//     limit: 24,
-//     seed_genres: "chill", "study", "piano", "ambient", "soul"
-//   });
-//   return result;
-// }
 
-// export async function makeExcited(){
-//   //make axios request to form playlist
-//   const result = await axios({
-//     method: 'get',
-//     url: 'https://api.spotify.com/v1/recommendations',
-//     limit: 24,
-//     seed_genres: "party", "dance", "club", "work-out", "pop"
-//   });
-//   return result;
-// }
+export function renderQuiz(){
+  let quiz = $('#root');
 
-// export async function createPlaylist(){
-//   //http request to create new createPlaylist on spotify
-//   let songURIs;
-//   for(let i = 0; i < finalSongs.length; i++){
-//     songURIs[i] = finalSongs[i].uri;
-//   }
-  
-
-//   var playlistName; // = user profile + a number
-
-//   // creates a new playlist on the user's spotify
-//   const result = await axios({
-//     method: 'post',
-//     url: 'https://api.spotify.com/v1/users/{user_id}/playlists',
-//     user_id: //insert HERE
-//     data: {
-//       "name": playlistName;
-//       "public": false,
-//     }
-//   });
-//   arrayOfLists.append(result);
-//   // adds songs to new playlist that was created above - directly to the user's spotify
-//   const addTracks = await axios({
-//     method: 'post',
-//     url: 'https://api.spotify.com/v1/playlists/' + result.id '/tracks',
-//     uris: {
-//       songURIs[0], songURIs[1], songURIs[2], songURIs[3], songURIs[4], songURIs[5], songURIs[6], songURIs[7], songURIs[8],songURIs[9], songURIs[10], songURIs[11], songURIs[12], songURIs[13], songURIs[14], songURIs[15], songURIs[16], songURIs[17],songURIs[18],songURIs[19],songURIs[20],songURIs[21],songURIs[22],songURIs[23]
-//     }
-//   });
-// }
-
-// // like the renderHero function - has all the calls
-// export function renderQuiz(){
-//   let quiz = $('body');
-//   quiz.empty();
-//   quiz.append(pageSet());
-
-//   //starting function to render questions
-//   quiz.append(renderQuestion());
+  quiz.append(renderQuestion());
  
-//   // handle answer buttons
-//   quiz.on('click', '.answer', handleAnswerButton);
-//   quiz.on('click', '.submit', handleSubmit);
+  quiz.on('click', '.answer', handleAnswerButton);
 
-// }
-// $(function() {
-//     renderQuiz();
-// });
+ // quiz.on('click', '.profileButton', handleProfileButton);
+}
+
+$(function() {
+    renderQuiz();
+});
