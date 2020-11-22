@@ -50,8 +50,9 @@ function renderRecipeCard(recipe) {
 
     console.log(dishType)
 
-
-    let card = `<div class="box" id="recipeBox">
+    for(let i = 0; i <6; i++){
+    let card = `<div class= "column is-half">
+    <div class="box" id="${recipe.id}">
     
   <img class="recipe_img" src="${recipe.img}">
     <article class="media">
@@ -72,15 +73,17 @@ function renderRecipeCard(recipe) {
         <span class="tag">${healthLabel}</span>
     </div>
     <div class="tags">
-      <button id="${recipe.id}close" class="delete" class="button m-1 is-small is-danger">Delete <i class="ml-1 far fa-trash-alt"></i></button>
-      <button id="${recipe.id}edit" class ="edit" class="button is-info m-1 is-small">Edit <i class="ml-1 fas fa-edit"></i></button>
+      <button id="${recipe.id}" class="delete" class="button m-1 is-small is-danger">Delete <i class="ml-1 far fa-trash-alt"></i></button>
+      <button id="${recipe.id}" class ="edit" class="button is-info m-1 is-small">Edit <i class="ml-1 fas fa-edit"></i></button>
     </div>
     
     
-</div>`
+</div>
+</div>`;
 
 
-    return card
+    $('.cardRoot').append(card);
+}
 }
 
 function handleEditButton(event){
@@ -89,7 +92,7 @@ function handleEditButton(event){
     let editForm = `
     `;
 
-    $('#recipeBox').replaceWith(editForm);
+    $('#' + event.target.id).replaceWith(editForm);
 
 }
 
@@ -97,16 +100,14 @@ function handleDeleteButton(event){
     event.preventDefault();
     //insert axios call
 
-    $('#recipeBox').replaceWith(``);
+    $('#' + event.target.id).replaceWith(``);
     
 
 }
 
 
-
-
 $(function () {
-    for (let i = 0; i < 6; i++) {
+   /* /for (let i = 0; i < 6; i++) {
         let currCard = renderRecipeCard(recipe);
 
         // this is added so we can add them to be in a grid formation
@@ -117,6 +118,8 @@ $(function () {
         }
 
     }
+    */
+   renderRecipeCard(recipe);
     $(document).on('click', '.edit', handleEditButton);
     $(document).on('click', '.delete', handleDeleteButton);
 });
