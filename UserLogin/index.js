@@ -17,6 +17,13 @@ app.use(expressSession({
     }
 }));
 
+app.listen(port, () => {
+    // console.log("User Login Example up and running on port " + port);
+  console.log(`Example app listening at http://localhost:${port}`)
+})
+
+
+
 const Secret = require("./Secret.js");
 
 const login_data = require('data-store')({path: process.cwd() + '/data/users.json'});
@@ -148,7 +155,3 @@ app.delete('/secret/:id', (req, res) => {
      res.json(true);
 });
 
-app.listen(port, () => {
-    // console.log("User Login Example up and running on port " + port);
-  console.log(`Example app listening at http://localhost:${port}`)
-})

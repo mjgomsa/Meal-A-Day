@@ -16,5 +16,9 @@
   "katie": {
     "user": "katie",
     "password": "pass456"
+  },
+  "annie": {
+    "user": "hey",
+    "password": "hey"
   }
 }

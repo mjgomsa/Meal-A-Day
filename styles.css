@@ -40,6 +40,13 @@ nav {
     width: 100%;
     color: #ee6d66 !important;
     background:#f3f3f4;
+    margin: 0 auto;
+  }
+
+  .hero-body {
+    display: flex;
+    align-items: center;
+    margin: auto;
   }
 
 #hero_img {
@@ -63,7 +70,7 @@ nav {
 
 .is-family-secondary{
     font-family: 'Sansita Swashed', cursive;
-    font-size: 6em !important;
+    font-size: 4em !important;
     color:#ee6d66 !important;
 }
 
@@ -154,13 +161,10 @@ nav {
   background-position: center;
 }
 
-.delete {
-  position: relative;
-  top: 0px;
-  right: 0px;
-  
+.edit_btn {
+  background: none;
+  border: none;
 }
-
 .recipe_img {
   width: 100%;
 }
