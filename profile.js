@@ -72,14 +72,8 @@ function renderRecipeCard(recipe) {
         <span class="tag">${healthLabel}</span>
     </div>
     <div class="tags">
-    <span class="tag is-danger">
-      Delete
-      <button id="${recipe.id}close" class="delete is-small"></button>
-      </span>
-      <span class="tag is-info">
-      Delete
-      <button id="${recipe.id}close"></button>
-      </span>
+      <button id="${recipe.id}close" class="button m-1 is-small is-danger">Delete <i class="ml-1 far fa-trash-alt"></i></button>
+      <button id="${recipe.id}edit" class="button is-info m-1 is-small">Edit <i class="ml-1 fas fa-edit"></i></button>
     </div>
     
     
