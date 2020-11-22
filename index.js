@@ -71,6 +71,7 @@ app.post('/createUser', (req, res) =>{
 // })
 
 app.post('/login', (req, res) => {
+    console.log('hey')
     let user = req.body.user;
     let password = req.body.password;
 
