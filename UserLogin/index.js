@@ -6,6 +6,18 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 const expressSession = require('express-session');
+
+
+let cors = require('cors');
+
+const corsConfi = {
+  origin: "http://localhost:3000", //LOCAL
+  //origin: "http://localhost:3000", //HEROKU
+  credentials: true
+}
+app.use(cors(corsConfi));
+
+
 app.use(expressSession({
     name: "kmpSessionCookie",
     secret: "express session secret",
@@ -39,6 +51,24 @@ app.post('/createUser', (req, res) =>{
       res.status(400).send("Username already exists!");
     }
   });
+
+//   app.post('/login', async (req, res) => {
+//       console.log('hey')
+//     let user = req.body.user
+//     let password = req.body.password
+//     let result = await checkLogin(user, password)
+//     if (result == "User does not exist"){
+//         res.status(404).send("Not found");
+//         return
+//     } else if (result == "Incorrect password"){
+//         res.status(403).send("Unauthorized");
+//         return
+//     } else {
+//         req.session.username = user;
+//         res.json(true);
+//         return user;
+//     }
+// })
 
 app.post('/login', (req, res) => {
     let user = req.body.user;

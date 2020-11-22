@@ -4,7 +4,7 @@ $(function () {
         event.preventDefault();
         let username = $("#rtrnUsername").val();
         let password = $("#rtrnPass").val();
-        const result = await axios({
+        await axios({
             method: 'post',
             url: '../login', //LOCAL
             data: {
@@ -12,9 +12,10 @@ $(function () {
                 password: `${password}`
             },
             withCredentials: true
-        }).then(() => {
+        }).then((response) => {
             $("#messages").append('<br><p class="has-text-danger">SUCCESS!<p>');
             location.href = "./profile.html";
+            console.log(response)
         }).catch((e) => {
             $("#messages").append('<br><p class="has-text-danger">Username or password incorrect. Try again!<p>');
             console.log(e)

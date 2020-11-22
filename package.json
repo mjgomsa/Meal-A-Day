@@ -2,7 +2,7 @@
   "name": "upbeat",
   "version": "1.0.0",
   "description": "",
-  "main": "logSign.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx browser-sync start -sw"
@@ -22,6 +22,7 @@
     "browser": "^0.2.6",
     "browser-sync": "^2.26.13",
     "bulma": "^0.9.1",
+    "cors": "^2.8.5",
     "express-session": "^1.17.1",
     "hover.css": "^2.3.2",
     "requirejs": "^2.3.6",
